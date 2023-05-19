@@ -1,20 +1,3 @@
-# Level 16
-First we connect to the server using `ssh`<br/>
-Then we use `nmap` to get a list of all the listening ports.<br/>
-Then we connect to them using openssl and get our flag.<br/>
----
-Commands-
----
-`ssh bandit16@bandit.labs.overthewire.org -p 2220`
----
-`nmap localhost -p31000-32000`<br/>
-This command searches for all the ports listening on the `localhost` in the range 31000-32000<br/>
-We then get 5 ports and we can connect to them one by one for getting our flag.
----
-`echo "JQttfApK4SeyHwDlI9SXGR50qclOAil1" | openssl s_client -connect localhost:31790`<br/>
----
-**Private key-**
-```
 -----BEGIN RSA PRIVATE KEY-----
 MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
 imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
@@ -42,4 +25,3 @@ YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
 dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
 vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
 -----END RSA PRIVATE KEY-----
-```
